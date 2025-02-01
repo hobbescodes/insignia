@@ -1,39 +1,77 @@
-import { resolve } from "node:path";
+import { copyFileSync } from "node:fs";
+import path from "node:path";
 
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
+import { globbySync } from "globby";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+
+import pkg from "./package.json";
 
 /**
  * Vite configuration.
  */
 const config = defineConfig({
   build: {
+    target: "esnext",
+    minify: false,
+    sourcemap: true,
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
-      name: "insignia",
-      fileName: (format) => `index.${format}.js`,
+      entry: globbySync(["src/**/index.ts"]),
+      fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
     },
     rollupOptions: {
-      external: ["@ark-ui/react", "react", "react-dom", "tailwindcss"],
-      output: {
-        globals: {
-          "@ark-ui/react": "@ark-ui/react",
-          react: "React",
-          "react-dom": "ReactDOM",
-          tailwindcss: "tailwindcss",
+      external: [...Object.keys(pkg.peerDependencies ?? {})],
+      output: [
+        {
+          format: "cjs",
+          preserveModules: true,
+          preserveModulesRoot: "src",
+          exports: "named",
+          entryFileNames: "[name].cjs",
+          banner: (x) => renderBanner(x.fileName),
         },
-      },
+        {
+          format: "es",
+          preserveModules: true,
+          preserveModulesRoot: "src",
+          exports: "named",
+          entryFileNames: "[name].js",
+          banner: (x) => renderBanner(x.fileName),
+        },
+      ],
     },
-    sourcemap: true,
-    emptyOutDir: true,
   },
   plugins: [
     react(),
     tailwindcss(),
-    dts({ rollupTypes: true, exclude: ["**/*.test.ts", "**/*.stories.ts"] }),
+    dts({
+      entryRoot: "src",
+      staticImport: true,
+      exclude: ["**/*.stories.ts", "**/*.test.tsx"],
+      afterBuild: () => {
+        globbySync(["dist/**/*.d.ts", "dist/**.d.ts"]).map((file) => {
+          copyFileSync(file, file.replace(/\.d\.ts$/, ".d.cts"));
+        });
+      },
+    }),
   ],
 });
+
+const renderBanner = (fileName: string) => {
+  const file = path.parse(fileName);
+
+  if (isBarrelComponent(file) || isSpecialFile(file)) {
+    return "";
+  }
+
+  return `'use client';`;
+};
+
+const isBarrelComponent = (file: path.ParsedPath) =>
+  file.dir.endsWith(file.name);
+
+const isSpecialFile = (file: path.ParsedPath) => ["index"].includes(file.name);
 
 export default config;

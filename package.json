@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "files": ["dist"],
   "scripts": {
     "dev": "vite",
@@ -17,9 +18,26 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
+      "source": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./*": {
+      "source": "./src/components/*/index.ts",
+      "import": {
+        "types": "./dist/components/*/index.d.ts",
+        "default": "./dist/components/*/index.js"
+      },
+      "require": {
+        "types": "./dist/components/*/index.d.cts",
+        "default": "./dist/components/*/index.cjs"
+      }
     },
     "./dist/index.css": "./dist/index.css"
   },
@@ -42,6 +60,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react-swc": "^3.7.2",
+    "globby": "^14.0.2",
     "storybook": "^8.5.3",
     "typescript": "~5.6.2",
     "vite": "^6.0.5",
