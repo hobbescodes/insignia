@@ -4,3 +4,5 @@ dist
 
 # Editor directories and files
 .DS_Store
+
+*storybook.log

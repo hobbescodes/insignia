@@ -29,7 +29,11 @@ const config = defineConfig({
     sourcemap: true,
     emptyOutDir: true,
   },
-  plugins: [react(), tailwindcss(), dts({ rollupTypes: true })],
+  plugins: [
+    react(),
+    tailwindcss(),
+    dts({ rollupTypes: true, exclude: ["**/*.test.ts", "**/*.stories.ts"] }),
+  ],
 });
 
 export default config;
