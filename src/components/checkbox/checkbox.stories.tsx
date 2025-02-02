@@ -43,6 +43,6 @@ const meta = {
   tags: ["autodocs"],
 } satisfies Meta<typeof Checkbox>;
 
-export const Default: Story = {};
+export const Basic: Story = {};
 
 export default meta;

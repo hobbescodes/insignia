@@ -18,6 +18,6 @@ const meta: Meta<typeof Avatar> = {
   tags: ["autodocs"],
 };
 
-export const Default: Story = {};
+export const Basic: Story = {};
 
 export default meta;

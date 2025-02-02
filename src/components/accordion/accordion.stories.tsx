@@ -54,7 +54,7 @@ const meta = {
   tags: ["autodocs"],
 } satisfies Meta<typeof Accordion>;
 
-export const Default: Story = {};
+export const Basic: Story = {};
 
 export const Multiple: Story = {
   args: {

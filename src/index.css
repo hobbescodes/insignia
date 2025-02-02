@@ -9,7 +9,7 @@
   }
 
   :root {
-    --background: 0 0% 100%;
+    --background: var(--colors-zinc-50);
     --foreground: var(--color-zinc-950); /* 240 10% 3.9% */
 
     --card: 0 0% 100%;
