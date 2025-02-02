@@ -25,7 +25,10 @@ const CheckboxRoot = ({ className, ...rest }: CheckboxProps) => (
 export interface CheckboxLabelProps extends CheckboxPrimitiveLabelProps {}
 
 const CheckboxLabel = ({ className, ...rest }: CheckboxLabelProps) => (
-  <CheckboxPrimitive.Label className={cx("font-medium", className)} {...rest} />
+  <CheckboxPrimitive.Label
+    className={cx("text-sm font-medium", className)}
+    {...rest}
+  />
 );
 
 export interface CheckboxControlProps extends CheckboxPrimitiveControlProps {}
@@ -33,7 +36,7 @@ export interface CheckboxControlProps extends CheckboxPrimitiveControlProps {}
 const CheckboxControl = ({ className, ...rest }: CheckboxControlProps) => (
   <CheckboxPrimitive.Control
     className={cx(
-      "h-4.5 w-4.5 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
+      "size-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
       className
     )}
     {...rest}
