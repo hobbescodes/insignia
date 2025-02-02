@@ -50,7 +50,7 @@ const Accordion = ({ ...props }: AccordionRootProps) => (
 );
 
 const meta = {
-  title: "Components/Accordion",
+  title: "Components/Core/Accordion",
   component: Accordion,
   tags: ["autodocs"],
 } satisfies Meta<typeof Accordion>;

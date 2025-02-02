@@ -7,14 +7,17 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "check": "biome check --write src",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "knip": "knip"
   },
   "exports": {
     ".": {
@@ -63,6 +66,7 @@
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react-swc": "^3.7.2",
     "globby": "^14.0.2",
+    "knip": "^5.43.6",
     "storybook": "^8.5.3",
     "typescript": "~5.6.2",
     "vite": "^6.0.5",
