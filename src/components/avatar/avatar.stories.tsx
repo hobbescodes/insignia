@@ -1,8 +1,7 @@
 import { AvatarFallback, AvatarImage, AvatarRoot } from "./avatar";
 
-import type { AvatarRootProps } from "./avatar";
-
 import type { Meta, StoryObj } from "@storybook/react";
+import type { AvatarRootProps } from "./avatar";
 
 type Story = StoryObj<typeof meta>;
 
@@ -16,6 +15,7 @@ const Avatar = ({ ...props }: AvatarRootProps) => (
 const meta: Meta<typeof Avatar> = {
   title: "Components/Core/Avatar",
   component: Avatar,
+  tags: ["autodocs"],
 };
 
 export const Default: Story = {};

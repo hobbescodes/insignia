@@ -6,9 +6,8 @@ import {
   AccordionRoot,
 } from "./accordion";
 
-import type { AccordionRootProps } from "./accordion";
-
 import type { Meta, StoryObj } from "@storybook/react";
+import type { AccordionRootProps } from "./accordion";
 
 type Story = StoryObj<typeof meta>;
 
