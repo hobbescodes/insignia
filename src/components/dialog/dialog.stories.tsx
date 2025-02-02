@@ -30,7 +30,21 @@ const Dialog = ({ children, ...rest }: DialogProps) => (
           {children}
           <DialogCloseTrigger asChild className="absolute right-4 top-4">
             <Button variant="ghost" size="icon">
-              X
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <title>Close</title>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
             </Button>
           </DialogCloseTrigger>
         </DialogContent>
