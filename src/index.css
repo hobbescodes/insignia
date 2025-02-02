@@ -1,10 +1,11 @@
 @import "tailwindcss";
+@plugin "tailwindcss-animate";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, .dark, .dark *));
 
 @layer base {
   body {
-    @apply !bg-background !text-foreground;
+    @apply bg-background text-foreground;
   }
 
   :root {
@@ -104,4 +105,16 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--height);
+    }
+  }
 }
