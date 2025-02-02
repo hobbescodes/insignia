@@ -49,7 +49,7 @@ const config = defineConfig({
     dts({
       entryRoot: "src",
       staticImport: true,
-      exclude: ["**/*.stories.ts", "**/*.test.tsx"],
+      exclude: ["**/*.stories.tsx", "**/*.test.tsx"],
       afterBuild: () => {
         globbySync(["dist/**/*.d.ts", "dist/**.d.ts"]).map((file) => {
           copyFileSync(file, file.replace(/\.d\.ts$/, ".d.cts"));
