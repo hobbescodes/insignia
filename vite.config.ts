@@ -75,6 +75,7 @@ const renderBanner = (fileName: string) => {
 const isBarrelComponent = (file: path.ParsedPath) =>
   file.dir.endsWith(file.name);
 
-const isSpecialFile = (file: path.ParsedPath) => ["index"].includes(file.name);
+const isSpecialFile = (file: path.ParsedPath) =>
+  ["index", "cva.config"].includes(file.name);
 
 export default config;
