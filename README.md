@@ -12,4 +12,4 @@ A React component library built by [hobbescodes](https://github.com/hobbescodes)
 
 ## License
 
-The code in this repository is licensed under MIT, &copy; hobbescodes. See <a href="LICENSE.md">LICENSE.md</a> for more information.
+The code in this repository is licensed under MIT, &copy; hobbescodes. See <a href="LICENSE">LICENSE</a> for more information.
