@@ -1,5 +1,11 @@
 # @tigrisdev/insignia
 
+## 0.0.4
+
+### Patch Changes
+
+- [`ba4ba66`](https://github.com/hobbescodes/insignia/commit/ba4ba669bc6934d24d3eb9203d4f720c17fb20e9) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Update component exports
+
 ## 0.0.3
 
 ### Patch Changes
