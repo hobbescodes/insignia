@@ -1,5 +1,11 @@
 # @tigrisdev/insignia
 
+## 0.0.5
+
+### Patch Changes
+
+- [`f90e142`](https://github.com/hobbescodes/insignia/commit/f90e1425ba5fad087329b8f95d01c34fdd568dc2) Thanks [@hobbescodes](https://github.com/hobbescodes)! - Fix cva server side issue
+
 ## 0.0.4
 
 ### Patch Changes
