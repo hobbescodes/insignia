@@ -22,7 +22,10 @@ const config = defineConfig({
       fileName: (format) => (format === "es" ? "index.js" : "index.cjs"),
     },
     rollupOptions: {
-      external: [...Object.keys(pkg.peerDependencies ?? {})],
+      external: [
+        ...Object.keys(pkg.peerDependencies ?? {}),
+        "react/jsx-runtime",
+      ],
       output: [
         {
           format: "cjs",
