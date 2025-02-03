@@ -1,17 +1,16 @@
 {
-  "name": "insignia",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@tigrisdev/insignia",
+  "author": "hobbescodes",
+  "license": "MIT",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
-    "dev": "vite",
+    "dev": "bun storybook",
     "build": "tsc -b && vite build",
     "check": "biome check --write src",
     "preview": "vite preview",
