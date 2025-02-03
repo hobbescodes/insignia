@@ -3,7 +3,7 @@
 A React component library built by [hobbescodes](https://github.com/hobbescodes), powered by [Tailwind CSS](https://tailwindcss.com/) and [Ark](https://ark-ui.com/). Heavily inspired by [shadcn](https://github.com/shadcn/ui).
 
 > [!IMPORTANT]
-> This is a work in progress. The API is subject to change. Please do not use in production.
+> This is a work in progress. The API is subject to change. Please do not use in production. 🚧 IN ITS CURRENT STATE COMPONENTS WILL NOT RENDER AS EXPECTED 🚧
 
 ## Local Development
 
