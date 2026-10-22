@@ -48,7 +48,7 @@
     "./dist/index.css": "./dist/index.css"
   },
   "peerDependencies": {
-    "@ark-ui/react": "^4.9.1",
+    "@ark-ui/react": "^4.9.1 || ^5.0.0",
     "cva": "^1.0.0-beta.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
