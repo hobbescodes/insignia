@@ -69,7 +69,7 @@
     "@types/node": "^22.13.0",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react-swc": "^3.7.2",
+    "@vitejs/plugin-react-swc": "^4.0.0",
     "globby": "^14.0.2",
     "knip": "^5.43.6",
     "storybook": "^8.5.3",
